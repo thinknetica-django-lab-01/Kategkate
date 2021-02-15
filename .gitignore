@@ -130,3 +130,5 @@ dmypy.json
 
 .idea/
 *.sqllite3
+
+STATIC_ROOT

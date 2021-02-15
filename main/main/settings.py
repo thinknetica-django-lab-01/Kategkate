@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
-
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +125,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 SITE_ID = 1
+
+CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
