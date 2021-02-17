@@ -1,14 +1,23 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>hello my dear shop</title>
+    <title>Hello My Dear Shop</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-This is the catalogue which will soon appear here, but now you may enjoy the flatpages
-<ul>
-    <li><a href="/">About Us</a></li>
-    <li><a href="/">Contact Us</a></li>
-</ul>
+<div class="starter-template text-center py-5 px-3">
+    <h1>Marketplace</h1>
+    <p class="lead">These are the links to the pages which we have created, but yet they are not working, huh...<br> This is the catalogue which will soon appear here, but now you may enjoy the flatpages
+    <ul>
+        <li><a href="/">About Us</a></li>
+        <li><a href="/">Contact Us</a></li>
+    </ul>
+    </p>
+</div>
 </body>
 </html>
