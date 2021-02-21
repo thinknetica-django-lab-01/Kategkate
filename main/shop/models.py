@@ -67,7 +67,7 @@ class ItemInstance(models.Model):
         """
         String for representing the Model object
         """
-        return '%s (%s)' % (self.id, self.item.title)
+        return '%s (%s)' % (self.id, self.item)
 
 
 class Author(models.Model):
@@ -81,8 +81,7 @@ class Author(models.Model):
         """
         Returns the url to access a particular author instance.
         """
-        return reverse('author-detail', args=[str(self.id)])
-
+        return reverse('author-detail', args=[str(self.last_name)])
 
     def __str__(self):
         """
