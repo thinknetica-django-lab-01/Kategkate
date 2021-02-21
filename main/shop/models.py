@@ -52,6 +52,7 @@ class ItemInstance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Unique ID for this particular item across whole marketplace")
     item = models.ForeignKey('Item', on_delete=models.SET_NULL, null=True)
+    price = models.IntegerField(blank=False)
 
     ITEM_STATUS = (
         ('a', 'Available'),
