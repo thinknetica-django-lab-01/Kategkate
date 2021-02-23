@@ -68,7 +68,7 @@ class ItemInstance(models.Model):
         """
         String for representing the Model object
         """
-        return '%s (%s)' % (self.id, self.item)
+        return '%s (%s)'.format(self.id, self.item)
 
 
 class Author(models.Model):
