@@ -9,6 +9,18 @@
     <p>Building a website is, in many ways, an exercise of willpower. It’s tempting to get distracted by the bells and whistles of the design process, and forget all about creating compelling content.</p>
 </div>
 
+{% if turn_on_block %}
+<div class="Location">
+    if turn_on_block = True (or any text we would like to reproduce on the screen)
+</div>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+{{request.user}}
+{% else %}
+<p>Guest</p>
+{% endif %}
+
 <div>
     <h2><a href="/contact">Contacts</a></h2>
     <p>Take Moz, for example. A lot has happened since it was founded in 2004, so the company chose to share those milestones using a fun and clean design that incorporates clear headers, concise blurbs, and little graphics to break up the text.</p>
