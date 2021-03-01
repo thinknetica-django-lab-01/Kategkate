@@ -1,14 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-    <h1><a href="/">Marketplace</a></h1>
-</div>
 
-<div>
-    <h2><a href="/about">About Us</a></h2>
-    <p>Building a website is, in many ways, an exercise of willpower. It’s tempting to get distracted by the bells and whistles of the design process, and forget all about creating compelling content.</p>
-</div>
-
+{% include 'header.html' %}
 {% if turn_on_block %}
 <div class="Location">
     if turn_on_block = True (or any text we would like to reproduce on the screen)
@@ -20,6 +13,11 @@
 {% else %}
 <p>Guest</p>
 {% endif %}
+
+<div>
+    <h2><a href="/about">About Us</a></h2>
+    <p>Building a website is, in many ways, an exercise of willpower. It’s tempting to get distracted by the bells and whistles of the design process, and forget all about creating compelling content.</p>
+</div>
 
 <div>
     <h2><a href="/contact">Contacts</a></h2>
