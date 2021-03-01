@@ -52,6 +52,7 @@ class ItemInstance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Unique ID for this particular item across whole marketplace")
     item = models.ForeignKey('Item', on_delete=models.SET_NULL, null=True)
+    price = models.IntegerField(blank=False)
 
     ITEM_STATUS = (
         ('a', 'Available'),
@@ -67,7 +68,7 @@ class ItemInstance(models.Model):
         """
         String for representing the Model object
         """
-        return '%s (%s)' % (self.id, self.item.title)
+        return '%s (%s)'.format(self.id, self.item)
 
 
 class Author(models.Model):
@@ -81,8 +82,7 @@ class Author(models.Model):
         """
         Returns the url to access a particular author instance.
         """
-        return reverse('author-detail', args=[str(self.id)])
-
+        return reverse('author-detail', args=[str(self.last_name)])
 
     def __str__(self):
         """
