@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-    <h1><a href="/">Marketplace</a></h1>
+
+{% include 'header.html' %}
+{% if turn_on_block %}
+<div class="Location">
+    if turn_on_block = True (or any text we would like to reproduce on the screen)
 </div>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+{{request.user}}
+{% else %}
+<p>Guest</p>
+{% endif %}
 
 <div>
     <h2><a href="/about">About Us</a></h2>

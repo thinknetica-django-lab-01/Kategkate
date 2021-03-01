@@ -3,7 +3,15 @@ from django.views.generic import TemplateView
 
 
 def index(request):
-    return render(request, 'index.html')
+    turn_on_block = False
+    # многострочный перенос строки с аргументами
+    return render(
+        request,
+        'index.html',
+        {
+            'turn_on_block': turn_on_block
+        }
+    )
 
 
 class AboutView(TemplateView):

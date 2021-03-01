@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-.idea/
+.idea
 *.sqllite3
 
 STATIC_ROOT
