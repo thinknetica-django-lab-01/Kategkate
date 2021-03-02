@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load shop_extras %}
 {% block content %}
 
 {% include 'header.html' %}
@@ -23,4 +24,6 @@
     <h2><a href="/contact">Contacts</a></h2>
     <p>Take Moz, for example. A lot has happened since it was founded in 2004, so the company chose to share those milestones using a fun and clean design that incorporates clear headers, concise blurbs, and little graphics to break up the text.</p>
 </div>
+<p>Server's Time is {% get_time %}</p>
+<p>{{"Hello, World!"|inversion}}</p>
 {% endblock %}
