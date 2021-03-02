@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
+
+from shop.models import ItemInstance
 
 
 def index(request):
@@ -20,3 +22,16 @@ class AboutView(TemplateView):
 
 class ContactView(TemplateView):
     template_name = 'contact.html'
+
+
+class GoodsListView(ListView):
+    template_name = 'goods.html'
+    model = ItemInstance
+    context_object_name = 'goods'
+
+
+class ItemDetailView(DetailView):
+    template_name = 'good-detail.html'
+    model = ItemInstance
+    context_object_name = 'good'
+

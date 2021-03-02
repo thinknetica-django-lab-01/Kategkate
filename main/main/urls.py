@@ -18,7 +18,7 @@ from django.urls import path
 from shop import views
 from django.conf.urls import url, include
 from django.contrib import admin
-from shop.views import AboutView, ContactView
+from shop.views import AboutView, ContactView, GoodsListView, ItemDetailView
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -27,4 +27,6 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('about/', AboutView.as_view()),
     path('contact/', ContactView.as_view()),
+    path('goods/', GoodsListView.as_view()),
+    path('good/<pk>', ItemDetailView.as_view()),
 ]
