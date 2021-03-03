@@ -26,12 +26,18 @@ class ContactView(TemplateView):
 
 class GoodsListView(ListView):
     template_name = 'goods.html'
+    paginate_by = 1
     model = ItemInstance
     context_object_name = 'goods'
+
+    def get_queryset(self):
+        tag = self.request.GET.get('tag', None)
+        if tag:
+            return super(GoodsListView, self).get_queryset().filter(tags__name=tag)
+        return super(GoodsListView, self).get_queryset()
 
 
 class ItemDetailView(DetailView):
     template_name = 'good-detail.html'
     model = ItemInstance
     context_object_name = 'good'
-

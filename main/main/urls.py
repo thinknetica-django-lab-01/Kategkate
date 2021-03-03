@@ -27,6 +27,6 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('about/', AboutView.as_view()),
     path('contact/', ContactView.as_view()),
-    path('goods/', GoodsListView.as_view()),
+    path('goods/', GoodsListView.as_view(), name='goods'),
     path('good/<pk>', ItemDetailView.as_view()),
 ]
