@@ -53,6 +53,8 @@ class ItemInstance(models.Model):
                           help_text="Unique ID for this particular item across whole marketplace")
     item = models.ForeignKey('Item', on_delete=models.SET_NULL, null=True)
     price = models.IntegerField(blank=False)
+    tags = models.ManyToManyField('Tag', related_name='items')
+
 
     ITEM_STATUS = (
         ('a', 'Available'),
@@ -68,7 +70,7 @@ class ItemInstance(models.Model):
         """
         String for representing the Model object
         """
-        return f'{self.id}, {self.item}'
+        return f'{self.item}'
 
 
 class Author(models.Model):
@@ -89,3 +91,16 @@ class Author(models.Model):
         String for representing the Model object.
         """
         return '%s, %s' % (self.last_name, self.first_name)
+
+
+class Tag(models.Model):
+    """
+    Model representing the tag for the goods category.
+    """
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        """
+        String for representing the Tag.
+        """
+        return self.name
