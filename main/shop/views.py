@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic.edit import UpdateView, CreateView
 
 from shop.models import ItemInstance
 

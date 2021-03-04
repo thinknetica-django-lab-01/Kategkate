@@ -29,4 +29,5 @@ urlpatterns = [
     path('contact/', ContactView.as_view()),
     path('goods/', GoodsListView.as_view(), name='goods'),
     path('good/<pk>', ItemDetailView.as_view()),
+    path('accounts/', include('accounts.urls')),
 ]
