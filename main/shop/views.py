@@ -40,18 +40,31 @@ class GoodsListView(ListView):
 
 
 class ItemDetailView(DetailView):
+    """
+    This class is for the detailed review of the Item object.
+    """
+
     template_name = 'good-detail.html'
     model = ItemInstance
     context_object_name = 'good'
 
 
 class ItemCreateView(CreateView):
+    """
+    This class is for the creation of the Item Object.
+    """
+
     template_name = 'good-create.html'
     form_class = ItemCreateForm
     success_url = '/'
     model = ItemInstance
 
+
 class ItemEditView(UpdateView):
+    """
+    This class is for the editing of the Item object.
+    """
+
     template_name = 'good-edit.html'
     form_class = ItemUpdateForm
     success_url = '/'
