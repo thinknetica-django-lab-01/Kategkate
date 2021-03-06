@@ -15,6 +15,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     form_class = UserUpdateForm
     success_url = '/'
+    login_url = '/admin/login'
 
     def get_object(self, queryset=None):
         return self.request.user
