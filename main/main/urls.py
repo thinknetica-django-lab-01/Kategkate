@@ -31,5 +31,6 @@ urlpatterns = [
     path('good/<pk>', ItemDetailView.as_view()),
     path('accounts/', include('accounts.urls')),
     path('goods/add', ItemCreateView.as_view(), name='item-create'),
-    path('goods/<pk>/edit/', ItemEditView.as_view(), name='item-edit')
+    path('goods/<pk>/edit/', ItemEditView.as_view(), name='item-edit'),
+    path('accounts/', include('allauth.urls')),
 ]
