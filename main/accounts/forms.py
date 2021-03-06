@@ -26,5 +26,4 @@ class UserUpdateForm(ModelForm):
             raise ValidationError('You must be 18 or older')
         return new_age
 
-    def send_email(self):
-        pass
+
