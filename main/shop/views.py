@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import UpdateView, CreateView
 
 from shop.models import ItemInstance
+from shop.forms import ItemUpdateForm, ItemCreateForm
 
 
 def index(request):
@@ -42,3 +43,16 @@ class ItemDetailView(DetailView):
     template_name = 'good-detail.html'
     model = ItemInstance
     context_object_name = 'good'
+
+
+class ItemCreateView(CreateView):
+    template_name = 'good-create.html'
+    form_class = ItemCreateForm
+    success_url = '/'
+    model = ItemInstance
+
+class ItemEditView(UpdateView):
+    template_name = 'good-edit.html'
+    form_class = ItemUpdateForm
+    success_url = '/'
+    model = ItemInstance
