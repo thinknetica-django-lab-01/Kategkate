@@ -18,7 +18,7 @@ from django.urls import path
 from shop import views
 from django.conf.urls import url, include
 from django.contrib import admin
-from shop.views import AboutView, ContactView, GoodsListView, ItemDetailView
+from shop.views import AboutView, ContactView, GoodsListView, ItemDetailView, ItemCreateView, ItemEditView
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -30,4 +30,7 @@ urlpatterns = [
     path('goods/', GoodsListView.as_view(), name='goods'),
     path('good/<pk>', ItemDetailView.as_view()),
     path('accounts/', include('accounts.urls')),
+    path('goods/add', ItemCreateView.as_view(), name='item-create'),
+    path('goods/<pk>/edit/', ItemEditView.as_view(), name='item-edit'),
+    path('accounts/', include('allauth.urls')),
 ]
