@@ -153,3 +153,5 @@ SITE_ID = 1
 
 CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+AUTH_USER_MODEL = 'accounts.User'
