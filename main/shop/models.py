@@ -55,7 +55,6 @@ class ItemInstance(models.Model):
     price = models.IntegerField(blank=False)
     tags = models.ManyToManyField('Tag', related_name='items')
 
-
     ITEM_STATUS = (
         ('a', 'Available'),
         ('n', 'Not Available'),
